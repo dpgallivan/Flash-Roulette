@@ -1,0 +1,19 @@
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 1060px;
+
+}
+
+.input{
+	width: 600px;
+}
+
+.text{
+	position:relative;
+	text-align: center;
+	
+
+}
+
