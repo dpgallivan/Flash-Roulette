@@ -1,0 +1,367 @@
+.droppable{
+	width: 98px;
+	height: 98px;
+	background-color: lightgreen;
+	border: 1px solid;
+	border-color: white;
+	clear: both;
+	text-align: center;
+}
+
+.red{
+	width: 98px;
+	height: 98px;
+	background-color: red;
+	border: 1px solid;
+	border-color: white;
+	clear: both;
+	text-align: center;
+}
+
+/*.red:hover{
+	background-color: green;
+}*/
+
+.black{
+	width: 98px;
+	height: 98px;
+	background-color: black;
+	border: 1px solid;
+	border-color: white;
+	clear: both;
+	text-align: center;	
+}
+
+/*.*/
+.green{
+	width: 98px;
+	height: 98px;
+	background-color: green;
+	border: 1px solid;
+	border-color: white;
+	clear: both;
+	text-align: center;	
+}
+
+.number{
+	font-size: 28px;
+	color: white;
+	clear: both;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 98px;
+	width: 100%; 
+}	 
+
+#tablewrap{
+	margin-top: 10px;
+	margin-left: 10px;
+	clear: both;
+}
+
+.zerocol{
+	margin-top: 50px;
+	width: 100px;
+	position: absolute;
+}
+
+.col1{   
+	margin-left: 100px;
+	width: 100px;
+	border-right: 
+}
+
+.col2{
+	margin-left: 200px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col3{
+	margin-left: 300px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col4{
+	margin-left: 400px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col5{
+	margin-left: 500px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col6{
+	margin-left: 600px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col7{
+	margin-left: 700px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col8{
+	margin-left: 800px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col9{
+	margin-left: 900px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col10{
+	margin-left: 1000px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col11{
+	margin-left: 1100px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col12{
+	margin-left: 1200px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+.col13{
+	margin-left: 1300px;
+	margin-top: -300px;
+	width: 100px;
+}
+
+#onethrutweleve{
+	width: 398px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 100px;
+	background-color: green;
+	position: absolute;
+	text-align: center;
+}
+
+#thirteenthrutwentyfour{
+	width: 398px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 500px;
+	background-color: green;
+	position: absolute;
+	text-align: center;
+}
+
+#twentyfivethrutwentysix{
+	width: 398px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 900px;
+	background-color: green;
+	position: absolute;
+	text-align: center;
+}
+
+#onethrueighteen{
+	width: 198px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 100px;
+	margin-top: 100px;
+	background-color: green;
+	position: absolute;
+	text-align: center;
+}
+
+#even{
+	width: 198px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 300px;
+	margin-top: 100px;
+	background-color: green;
+	position: absolute;
+	text-align: center;
+}
+
+#red{
+	width: 198px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 500px;
+	margin-top: 100px;
+	background-color: green;
+	position: absolute;
+	text-align: center;	
+}
+
+#red1{
+ background-color: red;
+ height: 50px;
+ width: 100px;
+ padding-left: 25px;
+ margin:auto;
+ margin-top: 25px;  
+}
+
+#black{
+	width: 198px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 700px;
+	margin-top: 100px;
+	background-color: green;
+	position: absolute;
+	text-align: center;	
+}
+
+#black1{
+ background-color: black;
+ height: 50px;
+ width: 100px;
+ padding-left: 25px;
+ margin:auto;
+ margin-top: 25px; 
+}
+
+#odd{
+	width: 198px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left: 900px;
+	margin-top: 100px;
+	background-color: green;
+	position: absolute;
+	text-align: center;	
+}
+
+
+#nineteenthruthirtysix{
+	width: 198px;
+	height: 98px;
+	border:1px solid;
+	border-color: white;
+	margin-left:1100px;
+	margin-top: 100px;
+	background-color: green;
+	position: absolute;
+	text-align: center;	
+}
+
+/*INVISBLE BOXES FOR INBETWEEN BETS-----------------------------------------------------------------------------------------*/
+
+.corner{
+	width: 50px;
+	height: 50px;
+	background-color: yellow;
+	position: absolute;
+	z-index: 1;
+	opacity: 1.00;
+}
+
+.inbetween{
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+	position: absolute;
+	z-index: 1;
+	opacity: 1.00;
+}
+
+#zerosplit{
+	width: 50px;
+	height: 50px;
+	margin-top: 125px;
+	margin-left: 25px;
+	background-color: yellow;
+	position: absolute;
+	z-index: 1;
+	opacity: 1.00;
+}
+
+#footer{
+	background-color: gray;
+	clear: both;
+    position: relative;
+    z-index: 1;
+	margin-top: 250px;
+	height: 200px;
+}
+
+.buttons{
+	width: 200px;
+	height: 200px;
+	float: left;
+	position: relative;
+}
+
+/*.chips:before {
+  content: ' \25CF';
+  font-size: 100px;
+}*/
+
+#chipWrapInner {
+  overflow: visible;
+  width: 400px;
+  height: 200px;
+  margin-left: 200px;
+  padding-top: 10px;
+}
+
+.chips {
+  display:inline-block;
+  line-height:0px;
+
+  border-radius:50%;
+  border:2px solid;
+
+  font-size:14px;
+  z-index: 10;
+  background-color: white; 
+}
+
+.chips span{
+  display:inline-block;
+
+  padding-top:50%;
+  padding-bottom:50%;
+
+  margin-left:8px;
+  margin-right:8px;
+  z-index: 10;
+}
+
+#chip1:hover{
+	background-color: blue;
+}
+
+#chip5:hover{
+	background-color: green;	
+}
+
+#chip10:hover{
+	background-color: yellow;
+}
+
+#chip25:hover{
+	background-color: purple;
+}

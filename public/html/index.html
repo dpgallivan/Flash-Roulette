@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+	<meta charset="UTF-8">
+	<link href="reset.css">
+	<link rel="stylesheet" href= "../css/style.css">
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"> -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+
+
+
+<div id="tablewrap">
+
+	<div class="zerocol">
+		<div class="green"><span  class ="number">0</span></div>
+		<div class="green"><span class ="number">00</span></div>
+	</div>
+
+	<div id="zerosplit"></div>
+
+	<div class="col1">
+		<div class="red" id="one"><span class ="number">1</span></div>
+		<div class="black" id="two"><span class ="number">2</span></div>
+		<div class="red" id="three"><span class ="number">3</span></div>
+	</div>
+
+	<div class="col2">
+		<div class="black" id ="four"><span class ="number">4</span></div>
+		<div class="red" id ="five"><span class ="number">5</span></div>
+		<div class="black" id ="six"><span class ="number">6</span></div>
+	</div>
+
+	<div class="col3">
+		<div class="red" id="seven"><span  class ="number">7</span></div>
+		<div class="black" id="eight"><span class ="number">8</span></div>
+		<div class="red" id="nine"><span class ="number">9</span></div>
+	</div>
+
+	<div class="col4">
+		<div class="black" id="ten"><span  class ="number">10</span></div>
+		<div class="red" id="eleven"><span class ="number">11</span></div>
+		<div class="black" id="twelve"><span class ="number">12</span></div>
+	</div>
+
+	<div class="col5">
+		<div class="red" id="thirteen"><span  class ="number">13</span></div>
+		<div class="black" id="fourteen"><span class ="number">14</span></div>
+		<div class="red" id="fifteen"><span class ="number">15</span></div>
+	</div>
+
+	<div class="col6">
+		<div class="black" id="sixteen"><span  class ="number">16</span></div>
+		<div class="red" id="seventeen"><span class ="number">17</span></div>
+		<div class="black" id="eighteen"><span class ="number">18</span></div>
+	</div>
+
+	<div class="col7">
+		<div class="red" id="nineteen"><span  class ="number">19</span></div>
+		<div class="black" id="twenty"><span class ="number">20</span></div>
+		<div class="red" id="twentyone"><span class ="number">21</span></div>
+	</div>
+
+	<div class="col8">
+		<div class="black" id="twentytwo"><span  class ="number">22</span></div>
+		<div class="red" id="twentythree"><span class ="number">23</span></div>
+		<div class="black" id="twentyfour"><span class ="number">24</span></div>
+	</div>
+
+	<div class="col9">
+		<div class="red" id="twentyfive"><span  class ="number">25</span></div>
+		<div class="black" id="twentysix"><span class ="number">26</span></div>
+		<div class="red" id="twentyseven"><span class ="number">27</span></div>
+	</div>
+
+	<div class="col10">
+		<div class="black" id="twentyeight"><span  class ="number">28</span></div>
+		<div class="red" id="twentynine"><span class ="number">29</span></div>
+		<div class="black" id="thirty"><span class ="number">30</span></div>
+	</div>
+
+	<div class="col11">
+		<div class="red" id="thirtyone"><span  class ="number">31</span></div>
+		<div class="black" id="thirtytwo"><span class ="number">32</span></div>
+		<div class="red" id="thirtythree"><span class ="number">33</span></div>
+	</div>
+
+	<div class="col12">
+		<div class="black" id="thirtyfour"><span  class ="number">34</span></div>
+		<div class="red" id="thirtyfive"><span class ="number">35</span></div>
+		<div class="black" id="thirtysix"><span class ="number">36</span></div>
+	</div>
+
+	<div class="col13">
+		<div class="green" id="one2"><span class ="number">2 to 1</span></div>
+		<div class="green" id="two2"><span class ="number">2 to 1</span></div>
+		<div class="green" id="three2"><span class ="number">2 to 1</span></div>
+	</div>
+
+	<!-- BETS ON BOTTOM OF TABLE -->
+	<div id="onethrutweleve"><span class ="number">1-12</span></div>
+	
+	<div id="thirteenthrutwentyfour"><span class ="number">13-24</span></div>
+
+	<div id="twentyfivethrutwentysix"><span class ="number">25-36</span></div>
+
+	<div id="onethrueighteen"><span class ="number">1-18</span></div>
+	<div id="even"><span class ="number">EVEN</span></div>
+	<div id="red"><div id="red1"></div></div>
+	<div id="black"><div id="black1"></div></div>
+	<div id="odd"><span class ="number">ODD</span></div>
+	<div id="nineteenthruthirtysix"><span class ="number">19-36</span></div>
+
+	
+</div>
+
+<!-- FOOTER BAR -->
+
+<footer id="footer">
+
+	<div class=buttons>
+		<button id="addBtn">Add Moneys $$</button>
+		<button id="spinBtn">Spin!</button>
+		<div id="moneyDisplay">You have: $100</div>
+	</div>
+
+
+	<div id="chipWrapInner">
+		<div id = "chip1" class="chips"><span>1</span></div>
+		<div id = "chip5" class="chips"><span>5</span></div>
+		<div id = "chip10" class="chips"><span>10</span></div>
+		<div id = "chip25" class="chips"><span>25</span></div>
+	</div>
+
+	<div class="log"></div>
+	<div class="textDisplay"></div>
+</footer>
+
+<script type="text/javascript">
+
+//ATTRIBUTING VALUES TO CHIPS-----------------------------------------------------------------------------
+$("#chip1").attr("data-chipvalue", 1);
+$("#chip5").attr("data-chipvalue", 5);
+$("#chip10").attr("data-chipvalue", 10);
+$("#chip25").attr("data-chipvalue", 25);
+
+//DRAGGING FUNCTIONS---------------------------------------------------------------------------------------
+  // $( function() {
+  //   $( "#chip1" ).draggable({
+  //   	preventCollision: true,
+  //   	containment: "document",
+  //   	snap: ".red,.black,.green,.corner,.inbetween",
+  //   	snapMode: "inner"});
+  // } );
+
+  //   $( function() {
+  //   $( ".chips, #draggable-nonvalid" ).draggable();
+  //   $(".red,.black,.green,.corner,.inbetween").droppable({
+  //       accept: '.chips',
+  //       drop: function(event, ui) {
+  //       	$(this).addClass(".droppable");
+  //           $(this).append(ui.draggable);
+  //       }
+  //   });
+  // });
+
+    $( function() {
+    $( ".chips, #draggable-nonvalid" ).draggable();
+    $(".red,.black,.green,.corner,.inbetween").droppable({
+    over: function(event, ui) {
+        console.log('You are over item with id ' + this.id);
+    }
+ });
+});
+
+//CREATING CORNER BETS------------------------------------------------------------------------------------
+//FIRST ROW---------------------------
+	var j = 1;
+	var marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("corner");
+		newBox.css("margin-top", "-225px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1, j+3, j+4];
+		var idStr = idArr.join("&");
+		idStr = "corner-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+//SECOND ROW---------------------------
+	j = 2;
+	marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("corner");
+		newBox.css("margin-top", "-125px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1, j+3, j+4];
+		var idStr = idArr.join("&");
+		idStr = "corner-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+
+
+	//CREATING INBETWEEN BETS---------------------------------------------------------------------
+    //FIRST ROW-----------------------------------------------------------------------------------
+	j = 1;
+	marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("inbetween");
+		newBox.css("margin-top", "-275px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+3];
+		var idStr = idArr.join("&");
+		idStr = "inbetween-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+    //SECOND ROW----------------------------------------------------------------------------------
+	j = 2;
+	marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("inbetween");
+		newBox.css("margin-top", "-175px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+3];
+		var idStr = idArr.join("&");
+		idStr = "inbetween-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+    //THIRD ROW----------------------------------------------------------------------------------
+	j = 1;
+	marginLeft = 25;
+
+	for (var i=0; i<12; i++){
+		var newBox = $("<div>");
+		newBox.addClass("inbetween");
+		newBox.css("margin-top", "-225px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1];
+		var idStr = idArr.join("&");
+		idStr = "inbetween-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+
+	j = 3;
+	marginLeft = 75;
+    //FIFTH ROW-----------------------------------------------------------------------------------
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("inbetween");
+		newBox.css("margin-top", "-75px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+3];
+		var idStr = idArr.join("&");
+		idStr = "inbetween-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+	//FOURTH ROW------------------------------------------------------------------------------------
+	j = 2;
+	marginLeft = 25;
+
+	for (var i=0; i<12; i++){
+		var newBox = $("<div>");
+		newBox.addClass("inbetween");
+		newBox.css("margin-top", "-125px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1];
+		var idStr = idArr.join("&");
+		idStr = "inbetween-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+
+	var moneyDisplay = 0;
+
+</script>
+
+</body>
+</html>

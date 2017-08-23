@@ -1,0 +1,24 @@
+{
+  "name": "Flash-Roulette",
+  "version": "1.0.0",
+  "description": "A game of Flash Roulette.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edricwong28/Flash-Roulette.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edricwong28/Flash-Roulette/issues"
+  },
+  "homepage": "https://github.com/edricwong28/Flash-Roulette#readme",
+  "dependencies": {
+    "sequelize": "^4.7.0"
+  }
+}
