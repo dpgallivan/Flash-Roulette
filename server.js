@@ -8,8 +8,7 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Models are not defined yet
-// var db = require("./models");
+var db = require("./models");
 
 app.use(express.static("public"));
 
@@ -24,13 +23,12 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/htmlRouting.js")(app);
 
-// Models are not defined yet
-// db.sequelize.sync({ force: true }).then(function() {
-//   app.listen(PORT, function() {
-//     console.log("App listening on PORT " + PORT);
-//   });
-// });
-
-app.listen(PORT,function() {
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
- });
+  });
+});
+
+// app.listen(PORT,function() {
+//     console.log("App listening on PORT " + PORT);
+// });
