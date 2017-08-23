@@ -10,20 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "mysql": "^2.14.1",
-    "sequelize": "^4.6.0"
-=======
-=======
->>>>>>> master
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
     "fs": "0.0.1-security",
     "method-override": "^2.3.9",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.1",
     "path": "^0.12.7",
     "sequelize": "^4.7.0"
->>>>>>> master
   }
 }
