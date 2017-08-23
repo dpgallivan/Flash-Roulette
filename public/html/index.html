@@ -1,321 +1,144 @@
 <!DOCTYPE html>
-<html>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 
-	<meta charset="UTF-8">
-	<link href="reset.css">
-	<link rel="stylesheet" href= "../css/style.css">
-<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"> -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	
-<head>
-	<title>
-		
-	</title>
-</head>
-<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<canvas width="1060" height="550"></canvas>
+<script src="https://unpkg.com/d3-timer"></script>
 
 
 
-<div id="tablewrap">
+<script>
 
-	<div class="zerocol">
-		<div class="green"><span  class ="number">0</span></div>
-		<div class="green"><span class ="number">00</span></div>
-	</div>
+var words = "Welcome\nTo\nFlash\nRoulette!".split(/\s+/g);
 
-	<div id="zerosplit"></div>
+var canvas = document.querySelector("canvas"),
+    canvas2 = canvas.cloneNode(),
+    context = canvas.getContext("2d"),
+    context2 = canvas2.getContext("2d");
+    width = canvas.width,
+    height = canvas.height;
 
-	<div class="col1">
-		<div class="red" id="one"><span class ="number">1</span></div>
-		<div class="black" id="two"><span class ="number">2</span></div>
-		<div class="red" id="three"><span class ="number">3</span></div>
-	</div>
+context.font = context2.font = "250px helevtica";
+context.textAlign = context2.textAlign = "center";
+context.lineJoin = context2.lineJoin = "round";
 
-	<div class="col2">
-		<div class="black" id ="four"><span class ="number">4</span></div>
-		<div class="red" id ="five"><span class ="number">5</span></div>
-		<div class="black" id ="six"><span class ="number">6</span></div>
-	</div>
+(function next() {
+  var i = 0.5, text = words.shift();
 
-	<div class="col3">
-		<div class="red" id="seven"><span  class ="number">7</span></div>
-		<div class="black" id="eight"><span class ="number">8</span></div>
-		<div class="red" id="nine"><span class ="number">9</span></div>
-	</div>
+  if(!text) {return;}
 
-	<div class="col4">
-		<div class="black" id="ten"><span  class ="number">10</span></div>
-		<div class="red" id="eleven"><span class ="number">11</span></div>
-		<div class="black" id="twelve"><span class ="number">12</span></div>
-	</div>
-
-	<div class="col5">
-		<div class="red" id="thirteen"><span  class ="number">13</span></div>
-		<div class="black" id="fourteen"><span class ="number">14</span></div>
-		<div class="red" id="fifteen"><span class ="number">15</span></div>
-	</div>
-
-	<div class="col6">
-		<div class="black" id="sixteen"><span  class ="number">16</span></div>
-		<div class="red" id="seventeen"><span class ="number">17</span></div>
-		<div class="black" id="eighteen"><span class ="number">18</span></div>
-	</div>
-
-	<div class="col7">
-		<div class="red" id="nineteen"><span  class ="number">19</span></div>
-		<div class="black" id="twenty"><span class ="number">20</span></div>
-		<div class="red" id="twentyone"><span class ="number">21</span></div>
-	</div>
-
-	<div class="col8">
-		<div class="black" id="twentytwo"><span  class ="number">22</span></div>
-		<div class="red" id="twentythree"><span class ="number">23</span></div>
-		<div class="black" id="twentyfour"><span class ="number">24</span></div>
-	</div>
-
-	<div class="col9">
-		<div class="red" id="twentyfive"><span  class ="number">25</span></div>
-		<div class="black" id="twentysix"><span class ="number">26</span></div>
-		<div class="red" id="twentyseven"><span class ="number">27</span></div>
-	</div>
-
-	<div class="col10">
-		<div class="black" id="twentyeight"><span  class ="number">28</span></div>
-		<div class="red" id="twentynine"><span class ="number">29</span></div>
-		<div class="black" id="thirty"><span class ="number">30</span></div>
-	</div>
-
-	<div class="col11">
-		<div class="red" id="thirtyone"><span  class ="number">31</span></div>
-		<div class="black" id="thirtytwo"><span class ="number">32</span></div>
-		<div class="red" id="thirtythree"><span class ="number">33</span></div>
-	</div>
-
-	<div class="col12">
-		<div class="black" id="thirtyfour"><span  class ="number">34</span></div>
-		<div class="red" id="thirtyfive"><span class ="number">35</span></div>
-		<div class="black" id="thirtysix"><span class ="number">36</span></div>
-	</div>
-
-	<div class="col13">
-		<div class="green" id="one2"><span class ="number">2 to 1</span></div>
-		<div class="green" id="two2"><span class ="number">2 to 1</span></div>
-		<div class="green" id="three2"><span class ="number">2 to 1</span></div>
-	</div>
-
-	<!-- BETS ON BOTTOM OF TABLE -->
-	<div id="onethrutweleve"><span class ="number">1-12</span></div>
-	
-	<div id="thirteenthrutwentyfour"><span class ="number">13-24</span></div>
-
-	<div id="twentyfivethrutwentysix"><span class ="number">25-36</span></div>
-
-	<div id="onethrueighteen"><span class ="number">1-18</span></div>
-	<div id="even"><span class ="number">EVEN</span></div>
-	<div id="red"><div id="red1"></div></div>
-	<div id="black"><div id="black1"></div></div>
-	<div id="odd"><span class ="number">ODD</span></div>
-	<div id="nineteenthruthirtysix"><span class ="number">19-36</span></div>
-
-	
-</div>
-
-<!-- FOOTER BAR -->
-
-<footer id="footer">
-
-	<div class=buttons>
-		<button id="addBtn">Add Moneys $$</button>
-		<button id="spinBtn">Spin!</button>
-		<div id="moneyDisplay">You have: $100</div>
-	</div>
-
-
-	<div id="chipWrapInner">
-		<div id = "chip1" class="chips"><span>1</span></div>
-		<div id = "chip5" class="chips"><span>5</span></div>
-		<div id = "chip10" class="chips"><span>10</span></div>
-		<div id = "chip25" class="chips"><span>25</span></div>
-	</div>
-
-	<div class="log"></div>
-	<div class="textDisplay"></div>
-</footer>
-
-<script type="text/javascript">
-
-//ATTRIBUTING VALUES TO CHIPS-----------------------------------------------------------------------------
-$("#chip1").attr("data-chipvalue", 1);
-$("#chip5").attr("data-chipvalue", 5);
-$("#chip10").attr("data-chipvalue", 10);
-$("#chip25").attr("data-chipvalue", 25);
-
-//DRAGGING FUNCTIONS---------------------------------------------------------------------------------------
-  // $( function() {
-  //   $( "#chip1" ).draggable({
-  //   	preventCollision: true,
-  //   	containment: "document",
-  //   	snap: ".red,.black,.green,.corner,.inbetween",
-  //   	snapMode: "inner"});
-  // } );
-
-  //   $( function() {
-  //   $( ".chips, #draggable-nonvalid" ).draggable();
-  //   $(".red,.black,.green,.corner,.inbetween").droppable({
-  //       accept: '.chips',
-  //       drop: function(event, ui) {
-  //       	$(this).addClass(".droppable");
-  //           $(this).append(ui.draggable);
-  //       }
-  //   });
-  // });
-
-    $( function() {
-    $( ".chips, #draggable-nonvalid" ).draggable();
-    $(".red,.black,.green,.corner,.inbetween").droppable({
-    over: function(event, ui) {
-        console.log('You are over item with id ' + this.id);
-    }
- });
-});
-
-//CREATING CORNER BETS------------------------------------------------------------------------------------
-//FIRST ROW---------------------------
-	var j = 1;
-	var marginLeft = 75;
-
-	for (var i=0; i<11; i++){
-		var newBox = $("<div>");
-		newBox.addClass("corner");
-		newBox.css("margin-top", "-225px");
-		marginLeft+=(100);
-		newBox.css("margin-left", marginLeft + "px");
-		var idArr = [j, j+1, j+3, j+4];
-		var idStr = idArr.join("&");
-		idStr = "corner-" + idStr;
-		newBox.attr("id", idStr);
-		$("#tablewrap").append(newBox);
-		j+=3;
-
-	}
-//SECOND ROW---------------------------
-	j = 2;
-	marginLeft = 75;
-
-	for (var i=0; i<11; i++){
-		var newBox = $("<div>");
-		newBox.addClass("corner");
-		newBox.css("margin-top", "-125px");
-		marginLeft+=(100);
-		newBox.css("margin-left", marginLeft + "px");
-		var idArr = [j, j+1, j+3, j+4];
-		var idStr = idArr.join("&");
-		idStr = "corner-" + idStr;
-		newBox.attr("id", idStr);
-		$("#tablewrap").append(newBox);
-		j+=3;
-
-	}
-
-
-	//CREATING INBETWEEN BETS---------------------------------------------------------------------
-    //FIRST ROW-----------------------------------------------------------------------------------
-	j = 1;
-	marginLeft = 75;
-
-	for (var i=0; i<11; i++){
-		var newBox = $("<div>");
-		newBox.addClass("inbetween");
-		newBox.css("margin-top", "-275px");
-		marginLeft+=(100);
-		newBox.css("margin-left", marginLeft + "px");
-		var idArr = [j, j+3];
-		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
-		newBox.attr("id", idStr);
-		$("#tablewrap").append(newBox);
-		j+=3;
-
-	}
-    //SECOND ROW----------------------------------------------------------------------------------
-	j = 2;
-	marginLeft = 75;
-
-	for (var i=0; i<11; i++){
-		var newBox = $("<div>");
-		newBox.addClass("inbetween");
-		newBox.css("margin-top", "-175px");
-		marginLeft+=(100);
-		newBox.css("margin-left", marginLeft + "px");
-		var idArr = [j, j+3];
-		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
-		newBox.attr("id", idStr);
-		$("#tablewrap").append(newBox);
-		j+=3;
-
-	}
-    //THIRD ROW----------------------------------------------------------------------------------
-	j = 1;
-	marginLeft = 25;
-
-	for (var i=0; i<12; i++){
-		var newBox = $("<div>");
-		newBox.addClass("inbetween");
-		newBox.css("margin-top", "-225px");
-		marginLeft+=(100);
-		newBox.css("margin-left", marginLeft + "px");
-		var idArr = [j, j+1];
-		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
-		newBox.attr("id", idStr);
-		$("#tablewrap").append(newBox);
-		j+=3;
-
-	}
-
-	j = 3;
-	marginLeft = 75;
-    //FIFTH ROW-----------------------------------------------------------------------------------
-	for (var i=0; i<11; i++){
-		var newBox = $("<div>");
-		newBox.addClass("inbetween");
-		newBox.css("margin-top", "-75px");
-		marginLeft+=(100);
-		newBox.css("margin-left", marginLeft + "px");
-		var idArr = [j, j+3];
-		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
-		newBox.attr("id", idStr);
-		$("#tablewrap").append(newBox);
-		j+=3;
-
-	}
-	//FOURTH ROW------------------------------------------------------------------------------------
-	j = 2;
-	marginLeft = 25;
-
-	for (var i=0; i<12; i++){
-		var newBox = $("<div>");
-		newBox.addClass("inbetween");
-		newBox.css("margin-top", "-125px");
-		marginLeft+=(100);
-		newBox.css("margin-left", marginLeft + "px");
-		var idArr = [j, j+1];
-		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
-		newBox.attr("id", idStr);
-		$("#tablewrap").append(newBox);
-		j+=3;
-
-	}
-
-	var moneyDisplay = 0;
+  context.clearRect(0, 0, width, height);
+  context.fillText(text, width / 2, height / 2 + 100);
+  var timer = d3.timer(function() {
+    if (++i > text.length * 10) return timer.stop(), next();
+    context2.save();
+    context2.clearRect(0, 0, width, height);
+    context2.lineWidth = i & 1 ? i * 5 + 3 : i * 5;
+    context2.strokeStyle = i & 1 ? "white" : " #ff1a1a";
+    context2.strokeText(text, width / 2, height / 2 + 100);
+    context2.restore();
+    context2.drawImage(canvas, 0, 0);
+    context.drawImage(canvas2, 0, 0);
+  });
+})();
 
 </script>
+<br>
+<body>
+<div class="text">
+  <a class="button is-black is-large modal-button" data-target="modal-bis " 
+  id="createButton">Create Account</a>
+   <a class="button is-black is-large modal-button" data-target="modal-bis " 
+  id="loginButton">Login</a>
+</div>
+
+  <div class="modal" id="creaButton">
+    <div class="modal-background" id= "create-modal-background" ></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title"><strong>Create Account</strong></p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+
+      <section class="modal-card-body">
+
+        <div class="container">
+            <div class ="block">
+            <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email">
+            <span class="icon is-small is-left">
+              <i class="fa fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fa fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+              <i class="fa fa-lock"></i>
+            </span>
+          </p>
+        </div>
+            </div>
+          </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-black">Create Account</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal" id="logButton">
+    <div class="modal-background" id= "login-modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title"><strong>Login</strong></p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+
+      <section class="modal-card-body">
+
+        <div class="container">
+            <div class ="block">
+            <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email">
+            <span class="icon is-small is-left">
+              <i class="fa fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fa fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+              <i class="fa fa-lock"></i>
+            </span>
+          </p>
+        </div>
+            </div>
+          </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-black">Login</button>
+      </footer>
+    </div>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/login.js"></script>
 
 </body>
+
 </html>
