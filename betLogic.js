@@ -10,12 +10,13 @@ var Bet = function(betInput,numSpun) {
 
 	for (var i = 0; i < valuesArr.length; i++) {
 		var val = valuesArr[i];
-		if(parseInt(val) && val !== "0" && val !== "00" ) {
+		if(Number.isInteger(val) && val !== "0" && val !== "00" ) {
 			valuesArr[i] = parseInt(val);
 		}
 	}
 
 	var payout;
+	var allValues = [];
 	switch(this.type) {
 		case "straight_up":
 			payout = 36;
@@ -27,6 +28,56 @@ var Bet = function(betInput,numSpun) {
 
 		case "corner":
 			payout = 9;
+			break;
+
+		case "row":
+			payout = 3;
+			for(var i = 0; i < Roulette.values.length; i++) {
+				if(valuesArr[0] == Roulette.values[i].row) {
+					allValues.push(Roulette.values[i].value);
+				}
+			}
+			valuesArr = allValues;
+			break;
+
+		case "twelve":
+			payout = 3;
+			for(var i = 0; i < Roulette.values.length; i++) {
+				if(valuesArr[0] == Roulette.values[i].twelve) {
+					allValues.push(Roulette.values[i].value);
+				}
+			}
+			valuesArr = allValues;
+			break;
+
+		case "half":
+			payout = 2;
+			for(var i = 0; i < Roulette.values.length; i++) {
+				if(valuesArr[0] == Roulette.values[i].half) {
+					allValues.push(Roulette.values[i].value);
+				}
+			}
+			valuesArr = allValues;
+			break;
+
+		case "EO":
+			payout = 2;
+			for(var i = 0; i < Roulette.values.length; i++) {
+				if(valuesArr[0] == Roulette.values[i].EO) {
+					allValues.push(Roulette.values[i].value);
+				}
+			}
+			valuesArr = allValues;
+			break;
+
+		case "color":
+			payout = 2;
+			for(var i = 0; i < Roulette.values.length; i++) {
+				if(valuesArr[0] == Roulette.values[i].color) {
+					allValues.push(Roulette.values[i].value);
+				}
+			}
+			valuesArr = allValues;
 			break;
 
 		default:
@@ -59,7 +110,23 @@ var Bet = function(betInput,numSpun) {
 // 	amount:25,
 // 	UserId:1
 // },{
-// 	name:"split-7&10",
+// 	name:"row-3",
+// 	amount:25,
+// 	UserId:1
+// },{
+// 	name:"twelve-3rd",
+// 	amount:25,
+// 	UserId:1
+// },{
+// 	name:"half-back",
+// 	amount:25,
+// 	UserId:1
+// },{
+// 	name:"EO-odd",
+// 	amount:25,
+// 	UserId:1
+// },{
+// 	name:"color-black",
 // 	amount:25,
 // 	UserId:1
 // }];
