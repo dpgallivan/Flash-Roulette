@@ -27,20 +27,20 @@
 
 	<div class="col4">
 		<div class="black" id="straight_up-10"><span  class ="number">10</span></div>
-		<div class="red" id="straight_up-11"><span class ="number">11</span></div>
-		<div class="black" id="straight_up-12"><span class ="number">12</span></div>
+		<div class="black" id="straight_up-11"><span class ="number">11</span></div>
+		<div class="red" id="straight_up-12"><span class ="number">12</span></div>
 	</div>
 
 	<div class="col5">
-		<div class="red" id="straight_up-13"><span  class ="number">13</span></div>
-		<div class="black" id="straight_up-14"><span class ="number">14</span></div>
-		<div class="red" id="straight_up-15"><span class ="number">15</span></div>
+		<div class="black" id="straight_up-13"><span  class ="number">13</span></div>
+		<div class="red" id="straight_up-14"><span class ="number">14</span></div>
+		<div class="black" id="straight_up-15"><span class ="number">15</span></div>
 	</div>
 
 	<div class="col6">
-		<div class="black" id="straight_up-16"><span  class ="number">16</span></div>
-		<div class="red" id="straight_up-17"><span class ="number">17</span></div>
-		<div class="black" id="straight_up-18"><span class ="number">18</span></div>
+		<div class="red" id="straight_up-16"><span  class ="number">16</span></div>
+		<div class="black" id="straight_up-17"><span class ="number">17</span></div>
+		<div class="red" id="straight_up-18"><span class ="number">18</span></div>
 	</div>
 
 	<div class="col7">
@@ -63,20 +63,20 @@
 
 	<div class="col10">
 		<div class="black" id="straight_up-28"><span  class ="number">28</span></div>
-		<div class="red" id="straight_up-29"><span class ="number">29</span></div>
-		<div class="black" id="straight_up-30"><span class ="number">30</span></div>
+		<div class="black" id="straight_up-29"><span class ="number">29</span></div>
+		<div class="red" id="straight_up-30"><span class ="number">30</span></div>
 	</div>
 
 	<div class="col11">
-		<div class="red" id="straight_up-31"><span  class ="number">31</span></div>
-		<div class="black" id="straight_up-32"><span class ="number">32</span></div>
-		<div class="red" id="straight_up-33"><span class ="number">33</span></div>
+		<div class="black" id="straight_up-31"><span  class ="number">31</span></div>
+		<div class="red" id="straight_up-32"><span class ="number">32</span></div>
+		<div class="black" id="straight_up-33"><span class ="number">33</span></div>
 	</div>
 
 	<div class="col12">
-		<div class="black" id="straight_up-34"><span  class ="number">34</span></div>
-		<div class="red" id="straight_up-35"><span class ="number">35</span></div>
-		<div class="black" id="straight_up-36"><span class ="number">36</span></div>
+		<div class="red" id="straight_up-34"><span  class ="number">34</span></div>
+		<div class="black" id="straight_up-35"><span class ="number">35</span></div>
+		<div class="red" id="straight_up-36"><span class ="number">36</span></div>
 	</div>
 
 	<div class="col13">
@@ -350,7 +350,7 @@ $("#chip25").attr("chipvalue", 25);
 		// console.log(moneySpent);
 		// console.log(bets);
 
-		var postData = {data:bets};
+		var postData = {data:JSON.stringify(bets)};
 
 	    // POSTs new user
 	    $.post(currentURL, postData, function(data) {

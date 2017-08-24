@@ -66,7 +66,12 @@ module.exports = function(app){
 	});
 
 	app.post('/roulette/:id', function(req, res){
-		console.log(req.body);
+		console.log(JSON.parse(req.body.data));
+		var betsArr = JSON.parse(req.body.data);
+
+		for(var i = 0; i < betsArr.length; i++) {
+			console.log(betsArr[i]);
+		}
 	});
 
 	app.put("/add_money/:id", function(req,res) {
