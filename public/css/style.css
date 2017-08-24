@@ -176,7 +176,7 @@
 	text-align: center;
 }
 
-#onethrueighteen{
+#half-front{
 	width: 198px;
 	height: 98px;
 	border:1px solid;
@@ -188,7 +188,7 @@
 	text-align: center;
 }
 
-#even{
+#EO-even{
 	width: 198px;
 	height: 98px;
 	border:1px solid;
@@ -200,7 +200,7 @@
 	text-align: center;
 }
 
-#red{
+#color-red{
 	width: 198px;
 	height: 98px;
 	border:1px solid;
@@ -221,7 +221,7 @@
  margin-top: 25px;  
 }
 
-#black{
+#color-black{
 	width: 198px;
 	height: 98px;
 	border:1px solid;
@@ -242,7 +242,7 @@
  margin-top: 25px; 
 }
 
-#odd{
+#EO-odd{
 	width: 198px;
 	height: 98px;
 	border:1px solid;
@@ -255,7 +255,7 @@
 }
 
 
-#nineteenthruthirtysix{
+#half-back{
 	width: 198px;
 	height: 98px;
 	border:1px solid;
@@ -267,7 +267,7 @@
 	text-align: center;	
 }
 
-/*INVISBLE BOXES FOR INBETWEEN BETS-----------------------------------------------------------------------------------------*/
+/*INVISBLE BOXES FOR split BETS-----------------------------------------------------------------------------------------*/
 
 .corner{
 	width: 50px;
@@ -278,7 +278,7 @@
 	opacity: 1.00;
 }
 
-.inbetween{
+.split{
 	width: 50px;
 	height: 50px;
 	background-color: blue;
@@ -287,12 +287,12 @@
 	opacity: 1.00;
 }
 
-#zerosplit{
+.zeroSplit{
 	width: 50px;
 	height: 50px;
 	margin-top: 125px;
 	margin-left: 25px;
-	background-color: yellow;
+	background-color: blue;
 	position: absolute;
 	z-index: 1;
 	opacity: 1.00;

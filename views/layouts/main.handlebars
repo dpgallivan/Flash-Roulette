@@ -22,11 +22,11 @@
 <div id="tablewrap">
 
 	<div class="zerocol">
-		<div id="zero" class="green"><span  class ="number">0</span></div>
-		<div id="dubzero" class="green"><span class ="number">00</span></div>
+		<div id="straight_up-0" class="green"><span  class ="number">0</span></div>
+		<div id="straight_up-00" class="green"><span class ="number">00</span></div>
 	</div>
 
-	<div id="zerosplit"></div>
+	<div id="split-0&00" class="zeroSplit split"></div>
 
 	<div class="col1">
 		<div class="red" id="straight_up-1"><span class ="number">1</span></div>
@@ -113,12 +113,12 @@
 
 	<div id="twelve-3rd"><span class ="number">25-36</span></div>
 
-	<div id="onethrueighteen"><span class ="number">1-18</span></div>
-	<div id="even"><span class ="number">EVEN</span></div>
-	<div id="red"><div id="red1"></div></div>
-	<div id="black"><div id="black1"></div></div>
-	<div id="odd"><span class ="number">ODD</span></div>
-	<div id="nineteenthruthirtysix"><span class ="number">19-36</span></div>
+	<div id="half-front"><span class ="number">1-18</span></div>
+	<div id="EO-even"><span class ="number">EVEN</span></div>
+	<div id="color-red"><div id="red1"></div></div>
+	<div id="color-black"><div id="black1"></div></div>
+	<div id="EO-odd"><span class ="number">ODD</span></div>
+	<div id="half-back"><span class ="number">19-36</span></div>
 
 	
 </div>
@@ -169,13 +169,13 @@ $("#chip25").attr("data-chipvalue", 25);
   //   $( "#chip1" ).draggable({
   //   	preventCollision: true,
   //   	containment: "document",
-  //   	snap: ".red,.black,.green,.corner,.inbetween",
+  //   	snap: ".red,.black,.green,.corner,.split",
   //   	snapMode: "inner"});
   // } );
 
   //   $( function() {
   //   $( ".chips, #draggable-nonvalid" ).draggable();
-  //   $(".red,.black,.green,.corner,.inbetween").droppable({
+  //   $(".red,.black,.green,.corner,.split").droppable({
   //       accept: '.chips',
   //       drop: function(event, ui) {
   //       	$(this).addClass(".droppable");
@@ -186,7 +186,7 @@ $("#chip25").attr("data-chipvalue", 25);
 
     $( function() {
     $( ".chips, #draggable-nonvalid" ).draggable();
-    $(".red,.black,.green,.corner,.inbetween,#twelve-1st,#twelve-2nd,#twelve-3rd,#odd,#even,#red,#black,#onethrueighteen,#nineteenthruthirtysix").droppable({
+    $(".red,.black,.green,.corner,.split,#twelve-1st,#twelve-2nd,#twelve-3rd,#EO-odd,#EO-even,#color-red,#color-black,#half-front,#half-back").droppable({
     over: function(event, ui) {
         console.log('You are over item with id ' + this.id);
     }
@@ -232,20 +232,20 @@ $("#chip25").attr("data-chipvalue", 25);
 	}
 
 
-	//CREATING INBETWEEN BETS---------------------------------------------------------------------
+	//CREATING split BETS---------------------------------------------------------------------
     //FIRST ROW-----------------------------------------------------------------------------------
 	j = 1;
 	marginLeft = 75;
 
 	for (var i=0; i<11; i++){
 		var newBox = $("<div>");
-		newBox.addClass("inbetween");
+		newBox.addClass("split");
 		newBox.css("margin-top", "-275px");
 		marginLeft+=(100);
 		newBox.css("margin-left", marginLeft + "px");
 		var idArr = [j, j+3];
 		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
+		idStr = "split-" + idStr;
 		newBox.attr("id", idStr);
 		$("#tablewrap").append(newBox);
 		j+=3;
@@ -257,13 +257,13 @@ $("#chip25").attr("data-chipvalue", 25);
 
 	for (var i=0; i<11; i++){
 		var newBox = $("<div>");
-		newBox.addClass("inbetween");
+		newBox.addClass("split");
 		newBox.css("margin-top", "-175px");
 		marginLeft+=(100);
 		newBox.css("margin-left", marginLeft + "px");
 		var idArr = [j, j+3];
 		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
+		idStr = "split-" + idStr;
 		newBox.attr("id", idStr);
 		$("#tablewrap").append(newBox);
 		j+=3;
@@ -275,13 +275,13 @@ $("#chip25").attr("data-chipvalue", 25);
 
 	for (var i=0; i<12; i++){
 		var newBox = $("<div>");
-		newBox.addClass("inbetween");
+		newBox.addClass("split");
 		newBox.css("margin-top", "-225px");
 		marginLeft+=(100);
 		newBox.css("margin-left", marginLeft + "px");
 		var idArr = [j, j+1];
 		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
+		idStr = "split-" + idStr;
 		newBox.attr("id", idStr);
 		$("#tablewrap").append(newBox);
 		j+=3;
@@ -293,13 +293,13 @@ $("#chip25").attr("data-chipvalue", 25);
     //FIFTH ROW-----------------------------------------------------------------------------------
 	for (var i=0; i<11; i++){
 		var newBox = $("<div>");
-		newBox.addClass("inbetween");
+		newBox.addClass("split");
 		newBox.css("margin-top", "-75px");
 		marginLeft+=(100);
 		newBox.css("margin-left", marginLeft + "px");
 		var idArr = [j, j+3];
 		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
+		idStr = "split-" + idStr;
 		newBox.attr("id", idStr);
 		$("#tablewrap").append(newBox);
 		j+=3;
@@ -311,13 +311,13 @@ $("#chip25").attr("data-chipvalue", 25);
 
 	for (var i=0; i<12; i++){
 		var newBox = $("<div>");
-		newBox.addClass("inbetween");
+		newBox.addClass("split");
 		newBox.css("margin-top", "-125px");
 		marginLeft+=(100);
 		newBox.css("margin-left", marginLeft + "px");
 		var idArr = [j, j+1];
 		var idStr = idArr.join("&");
-		idStr = "inbetween-" + idStr;
+		idStr = "split-" + idStr;
 		newBox.attr("id", idStr);
 		$("#tablewrap").append(newBox);
 		j+=3;
