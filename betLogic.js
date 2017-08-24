@@ -1,18 +1,5 @@
 var Roulette = require("./rouletteLogic");
 
-function resolveBets(betsArr) {
-	var spun = Roulette.spin();
-	console.log(spun);
-
-	for (var i = 0; i<betsArr.length; i++) {
-		betsArr[i] = new Bet(betsArr[i],spun);
-	}
-
-	return betsArr;
-}
-
-module.exports = resolveBets;
-
 var Bet = function(betInput,numSpun) {
 	this.UserId = betInput.UserId;
 
@@ -49,7 +36,7 @@ var Bet = function(betInput,numSpun) {
 	}
 
 	if (valuesArr.includes(numSpun)) {
-		this.net = betInput.amount * betsArr[i].payout;
+		this.net = betInput.amount * payout;
 	}
 
 	else {
@@ -58,3 +45,36 @@ var Bet = function(betInput,numSpun) {
 
 	this.values = JSON.stringify(valuesArr);
 };
+
+// var bets = [{
+// 	name:"corner-1&2&4&5",
+// 	amount:25,
+// 	UserId:1
+// },{
+// 	name:"split-0&00",
+// 	amount:25,
+// 	UserId:1
+// },{
+// 	name:"straight_up-26",
+// 	amount:25,
+// 	UserId:1
+// },{
+// 	name:"split-7&10",
+// 	amount:25,
+// 	UserId:1
+// }];
+
+// console.log(resolveBets(bets));
+
+function resolveBets(betsArr) {
+	var spun = Roulette.spin();
+	// console.log(spun);
+
+	for (var i = 0; i<betsArr.length; i++) {
+		betsArr[i] = new Bet(betsArr[i],spun);
+	}
+
+	return betsArr;
+}
+
+module.exports = resolveBets;
