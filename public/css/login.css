@@ -13,7 +13,10 @@ canvas {
 .text{
 	position:relative;
 	text-align: center;
-	
+}
 
+.error {
+	display: none;
+	color: red;
 }
 
