@@ -65,6 +65,10 @@ module.exports = function(app){
 		});
 	});
 
+	app.post('/roulette/:id', function(req, res){
+		console.log(req.body);
+	});
+
 	app.put("/add_money/:id", function(req,res) {
 
 		// console.log(req.body);

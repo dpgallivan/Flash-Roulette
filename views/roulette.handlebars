@@ -312,6 +312,8 @@ $("#chip25").attr("chipvalue", 25);
 	$("#spinBtn").on("click",function(event) {
 	    event.preventDefault();
 
+	    var currentURL = window.location;
+
 	    var allChips = $(".chips");
 	    // console.log($(allChips[0]).attr("beton"));
 
@@ -348,12 +350,13 @@ $("#chip25").attr("chipvalue", 25);
 		// console.log(moneySpent);
 		// console.log(bets);
 
-	    // // POSTs new user
-	    // $.post(currentURL + "/api/signup", newUser, function(data) {
-	    //   // console.log(data);
-	    //   // login(data.userId);
-	    //   window.location = currentURL + "/roulette/" + data.userId;
-	    // });
+		var postData = {data:bets};
+
+	    // POSTs new user
+	    $.post(currentURL, postData, function(data) {
+	      // console.log(data);
+	      // window.location = currentURL
+	    });
    	});
 
 </script>
