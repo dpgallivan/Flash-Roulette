@@ -107,10 +107,14 @@
 <footer id="footer">
 
 	<div class=buttons>
-	<input type="text" name="addMoney" id="addMoney">
+	<div id="moneyDisplay">${{user.money}}</div>
+	<form action="/add_money/{{user.id}}?_method=PUT" method="POST">
+		<input type="text" name="addMoney" id="addMoney">
+		<input type="hidden" name="money" value="{{user.money}}">
 		<button id="addBtn">Add Moneys $$</button>
+	</form>
+
 		<button id="spinBtn">Spin!</button>
-		<div id="moneyDisplay">${{user.money}}</div>
 	</div>
 
 

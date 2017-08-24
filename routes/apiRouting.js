@@ -63,15 +63,32 @@ module.exports = function(app){
 			// console.log(data.dataValues.id);
 			res.send({userId:data.dataValues.id});
 		});
+	});
 
-		// db.User.create({
-		// 	username: req.body.username,
-		// 	password: req.body.password
-		// }).then(function(){
-		// 	res.redirect(307, 'api/login');
-		// }).catch(function(err){
-		// 	console.log(err);
-		// 	res.json(err);
-		// });
+	app.put("/add_money/:id", function(req,res) {
+
+		// console.log(req.body);
+
+		var userMoney = parseInt(req.body.money);
+		var add = parseInt(req.body.addMoney);
+
+		if(!add) {
+			res.redirect("/roulette/" + req.params.id);
+			return;
+		}
+
+		var newAmount = userMoney + add;
+
+		db.User.update(
+			{money:newAmount},
+
+			{
+				where: {
+					id: req.params.id
+				}
+			}
+		).then(function() {
+			res.redirect("/roulette/" + req.params.id);
+		});
 	});
 };
