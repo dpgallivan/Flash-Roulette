@@ -1,4 +1,5 @@
 var db = require('../models');
+var resolveBets = require("../betLogic.js");
 
 module.exports = function(app){
 
@@ -72,6 +73,8 @@ module.exports = function(app){
 		for(var i = 0; i < betsArr.length; i++) {
 			console.log(betsArr[i]);
 		}
+
+		// betsArr = resolveBets(betsArr);
 	});
 
 	app.put("/add_money/:id", function(req,res) {
