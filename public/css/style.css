@@ -275,7 +275,7 @@
 	background-color: yellow;
 	position: absolute;
 	z-index: 1;
-	opacity: 0.00;
+	opacity: 1.00;
 }
 
 .split{
@@ -284,7 +284,7 @@
 	background-color: blue;
 	position: absolute;
 	z-index: 1;
-	opacity: 0.00;
+	opacity: 1.00;
 }
 
 .zeroSplit{
@@ -295,7 +295,7 @@
 	background-color: blue;
 	position: absolute;
 	z-index: 1;
-	opacity: 0.00;
+	opacity: 1.00;
 }
 
 #footer{
