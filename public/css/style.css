@@ -1,3 +1,12 @@
+body {
+    background-image: url("http://www.photos-public-domain.com/wp-content/uploads/2012/09/baby-blue-knit-t-shit-fabric-texture.jpg");
+    background-size: contain;
+    min-width: 1401px;
+    margin-bottom: 0;
+    margin-left: 0;
+    /*opacity: 0.5;*/
+}
+
 .droppable{
 	width: 98px;
 	height: 98px;
@@ -12,6 +21,7 @@
 	width: 98px;
 	height: 98px;
 	background-color: red;
+	background-image: url("http://bgfons.com/uploads/paint/paint_texture2178.jpg");
 	border: 1px solid;
 	border-color: white;
 	clear: both;
@@ -26,6 +36,7 @@
 	width: 98px;
 	height: 98px;
 	background-color: black;
+	background-image: url("https://d2d00szk9na1qq.cloudfront.net/Product/6a9cb6a9-e73c-4d69-9f45-35d918ce2deb/Images/Large_UL-851.jpg");
 	border: 1px solid;
 	border-color: white;
 	clear: both;
@@ -37,6 +48,7 @@
 	width: 98px;
 	height: 98px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	border: 1px solid;
 	border-color: white;
 	clear: both;
@@ -56,6 +68,7 @@
 #tablewrap{
 	margin-top: 10px;
 	margin-left: 10px;
+	margin: auto;
 	clear: both;
 }
 
@@ -150,6 +163,7 @@
 	border-color: white;
 	margin-left: 100px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;
 }
@@ -161,6 +175,7 @@
 	border-color: white;
 	margin-left: 500px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;
 }
@@ -172,6 +187,7 @@
 	border-color: white;
 	margin-left: 900px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;
 }
@@ -184,6 +200,7 @@
 	margin-left: 100px;
 	margin-top: 100px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;
 }
@@ -196,6 +213,7 @@
 	margin-left: 300px;
 	margin-top: 100px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;
 }
@@ -208,11 +226,13 @@
 	margin-left: 500px;
 	margin-top: 100px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;	
 }
 
 #red1{
+background-image: url("http://bgfons.com/uploads/paint/paint_texture2178.jpg");
  background-color: red;
  height: 50px;
  width: 100px;
@@ -229,11 +249,13 @@
 	margin-left: 700px;
 	margin-top: 100px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;	
 }
 
 #black1{
+background-image: url("https://d2d00szk9na1qq.cloudfront.net/Product/6a9cb6a9-e73c-4d69-9f45-35d918ce2deb/Images/Large_UL-851.jpg");
  background-color: black;
  height: 50px;
  width: 100px;
@@ -250,6 +272,7 @@
 	margin-left: 900px;
 	margin-top: 100px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;	
 }
@@ -263,6 +286,7 @@
 	margin-left:1100px;
 	margin-top: 100px;
 	background-color: green;
+	background-image: url("https://img0.etsystatic.com/051/0/6737207/il_fullxfull.741766604_gs74.jpg");
 	position: absolute;
 	text-align: center;	
 }
@@ -275,7 +299,7 @@
 	background-color: yellow;
 	position: absolute;
 	z-index: 1;
-	opacity: 1.00;
+	opacity: 0;
 }
 
 .split{
@@ -284,7 +308,7 @@
 	background-color: blue;
 	position: absolute;
 	z-index: 1;
-	opacity: 1.00;
+	opacity: 0;
 }
 
 .zeroSplit{
@@ -295,7 +319,7 @@
 	background-color: blue;
 	position: absolute;
 	z-index: 1;
-	opacity: 1.00;
+	opacity: 0;
 }
 
 #footer{
@@ -303,14 +327,42 @@
 	clear: both;
     position: relative;
     z-index: 1;
+    margin: auto;
 	margin-top: 250px;
 	height: 200px;
+	background-image: url("https://c1.staticflickr.com/1/26/61056391_31343afdc6_b.jpg");
+	background-size: cover;
+}
+
+/*#userNameDisplay, #moneyDisplay{
+	color: #004d80;
+	font-size: 17px;
+	background-image: url("https://c1.staticflickr.com/1/26/61056391_31343afdc6_b.jpg");
+}*/
+
+/*#userInfo {
+  display:inline-block;
+  line-height:0px;
+
+  border-radius:50%;
+  border:2px solid;
+
+  font-size:20px;
+  z-index: 10;
+  background-color: white;
+}*/
+
+#userInfo {
+	float: left;
+	margin-left: 100px;
 }
 
 .buttons{
 	width: 200px;
 	height: 200px;
 	float: left;
+	margin-left: 250px;
+	padding-top: 10px;
 	position: relative;
 }
 
@@ -323,7 +375,8 @@
   overflow: visible;
   width: 400px;
   height: 200px;
-  margin-left: 200px;
+  /*margin-left: 200px;*/
+  margin: auto;
   padding-top: 10px;
 }
 
@@ -355,7 +408,7 @@
 }
 
 #chip5:hover{
-	background-color: green;	
+	background-color: orange;	
 }
 
 #chip10:hover{
@@ -363,5 +416,21 @@
 }
 
 #chip25:hover{
+	background-color: purple;
+}
+
+#chip50:hover{
+	background-color: blue;
+}
+
+#chip75:hover{
+	background-color: orange;	
+}
+
+#chip100:hover{
+	background-color: yellow;
+}
+
+#chip200:hover{
 	background-color: purple;
 }
