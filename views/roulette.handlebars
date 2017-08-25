@@ -1,0 +1,362 @@
+<div id="tablewrap">
+
+	<div class="zerocol">
+		<div id="straight_up-0" class="green"><span  class ="number">0</span></div>
+		<div id="straight_up-00" class="green"><span class ="number">00</span></div>
+	</div>
+
+	<div id="split-0&00" class="zeroSplit split"></div>
+
+	<div class="col1">
+		<div class="red" id="straight_up-1"><span class ="number">1</span></div>
+		<div class="black" id="straight_up-2"><span class ="number">2</span></div>
+		<div class="red" id="straight_up-3"><span class ="number">3</span></div>
+	</div>
+
+	<div class="col2">
+		<div class="black" id ="straight_up-4"><span class ="number">4</span></div>
+		<div class="red" id ="straight_up-5"><span class ="number">5</span></div>
+		<div class="black" id ="straight_up-6"><span class ="number">6</span></div>
+	</div>
+
+	<div class="col3">
+		<div class="red" id="straight_up-7"><span  class ="number">7</span></div>
+		<div class="black" id="straight_up-8"><span class ="number">8</span></div>
+		<div class="red" id="straight_up-9"><span class ="number">9</span></div>
+	</div>
+
+	<div class="col4">
+		<div class="black" id="straight_up-10"><span  class ="number">10</span></div>
+		<div class="black" id="straight_up-11"><span class ="number">11</span></div>
+		<div class="red" id="straight_up-12"><span class ="number">12</span></div>
+	</div>
+
+	<div class="col5">
+		<div class="black" id="straight_up-13"><span  class ="number">13</span></div>
+		<div class="red" id="straight_up-14"><span class ="number">14</span></div>
+		<div class="black" id="straight_up-15"><span class ="number">15</span></div>
+	</div>
+
+	<div class="col6">
+		<div class="red" id="straight_up-16"><span  class ="number">16</span></div>
+		<div class="black" id="straight_up-17"><span class ="number">17</span></div>
+		<div class="red" id="straight_up-18"><span class ="number">18</span></div>
+	</div>
+
+	<div class="col7">
+		<div class="red" id="straight_up-19"><span  class ="number">19</span></div>
+		<div class="black" id="straight_up-20"><span class ="number">20</span></div>
+		<div class="red" id="straight_up-21"><span class ="number">21</span></div>
+	</div>
+
+	<div class="col8">
+		<div class="black" id="straight_up-22"><span  class ="number">22</span></div>
+		<div class="red" id="straight_up-23"><span class ="number">23</span></div>
+		<div class="black" id="straight_up-24"><span class ="number">24</span></div>
+	</div>
+
+	<div class="col9">
+		<div class="red" id="straight_up-25"><span  class ="number">25</span></div>
+		<div class="black" id="straight_up-26"><span class ="number">26</span></div>
+		<div class="red" id="straight_up-27"><span class ="number">27</span></div>
+	</div>
+
+	<div class="col10">
+		<div class="black" id="straight_up-28"><span  class ="number">28</span></div>
+		<div class="black" id="straight_up-29"><span class ="number">29</span></div>
+		<div class="red" id="straight_up-30"><span class ="number">30</span></div>
+	</div>
+
+	<div class="col11">
+		<div class="black" id="straight_up-31"><span  class ="number">31</span></div>
+		<div class="red" id="straight_up-32"><span class ="number">32</span></div>
+		<div class="black" id="straight_up-33"><span class ="number">33</span></div>
+	</div>
+
+	<div class="col12">
+		<div class="red" id="straight_up-34"><span  class ="number">34</span></div>
+		<div class="black" id="straight_up-35"><span class ="number">35</span></div>
+		<div class="red" id="straight_up-36"><span class ="number">36</span></div>
+	</div>
+
+	<div class="col13">
+		<div class="green" id="row-1"><span class ="number">2 to 1</span></div>
+		<div class="green" id="row-2"><span class ="number">2 to 1</span></div>
+		<div class="green" id="row-3"><span class ="number">2 to 1</span></div>
+	</div>
+
+	<!-- BETS ON BOTTOM OF TABLE -->
+	<div id="twelve-1st"><span class ="number">1-12</span></div>
+	
+	<div id="twelve-2nd"><span class ="number">13-24</span></div>
+
+	<div id="twelve-3rd"><span class ="number">25-36</span></div>
+
+	<div id="half-front"><span class ="number">1-18</span></div>
+	<div id="EO-even"><span class ="number">EVEN</span></div>
+	<div id="color-red"><div id="red1"></div></div>
+	<div id="color-black"><div id="black1"></div></div>
+	<div id="EO-odd"><span class ="number">ODD</span></div>
+	<div id="half-back"><span class ="number">19-36</span></div>
+
+	
+</div>
+
+<!-- FOOTER BAR -->
+
+<footer id="footer">
+
+	<div class=buttons>
+	<div id="moneyDisplay">${{user.money}}</div>
+	<form action="/add_money/{{user.id}}?_method=PUT" method="POST">
+		<input type="text" name="addMoney" id="addMoney">
+		<input type="hidden" name="money" value="{{user.money}}">
+		<button id="addBtn">Add Moneys $$</button>
+	</form>
+
+		<button id="spinBtn">Spin!</button>
+	</div>
+
+
+	<div id="chipWrapInner">
+		<div id = "chip1" class="chips"><span>1</span></div>
+		<div id = "chip5" class="chips"><span>5</span></div>
+		<div id = "chip10" class="chips"><span>10</span></div>
+		<div id = "chip25" class="chips"><span>25</span></div>
+	</div>
+
+	<div class="log"></div>
+	<div class="textDisplay"></div>
+</footer>
+
+<script type="text/javascript">
+
+//--------------------------------------------------------------------------------------------------------
+// var money = 0;
+
+// $("#moneyDisplay").html("$" + money);
+
+$("#addBtn").click(function(event){
+	money += $("#addMoney").val().trim();
+	$("#moneyDisplay").html("$" + money);
+});
+
+//ATTRIBUTING VALUES TO CHIPS-----------------------------------------------------------------------------
+$("#chip1").attr("chipvalue", 1);
+$("#chip5").attr("chipvalue", 5);
+$("#chip10").attr("chipvalue", 10);
+$("#chip25").attr("chipvalue", 25);
+
+//DRAGGING FUNCTIONS---------------------------------------------------------------------------------------
+  // $( function() {
+  //   $( "#chip1" ).draggable({
+  //   	preventCollision: true,
+  //   	containment: "document",
+  //   	snap: ".red,.black,.green,.corner,.split",
+  //   	snapMode: "inner"});
+  // } );
+
+  //   $( function() {
+  //   $( ".chips, #draggable-nonvalid" ).draggable();
+  //   $(".red,.black,.green,.corner,.split").droppable({
+  //       accept: '.chips',
+  //       drop: function(event, ui) {
+  //       	$(this).addClass(".droppable");
+  //           $(this).append(ui.draggable);
+  //       }
+  //   });
+  // });
+
+    $( function() {
+    $( ".chips, #draggable-nonvalid" ).draggable();
+    $(".red,.black,.green,.corner,.split,#twelve-1st,#twelve-2nd,#twelve-3rd,#EO-odd,#EO-even,#color-red,#color-black,#half-front,#half-back,#chipWrapInner").droppable({
+    over: function(event, ui) {
+        console.log('You are over item with id ' + this.id);
+        $(ui.draggable).attr("beton",this.id);
+        // console.log(ui.draggable);
+    }
+ });
+});
+
+//CREATING CORNER BETS------------------------------------------------------------------------------------
+//FIRST ROW---------------------------
+	var j = 1;
+	var marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("corner");
+		newBox.css("margin-top", "-225px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1, j+3, j+4];
+		var idStr = idArr.join("&");
+		idStr = "corner-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+//SECOND ROW---------------------------
+	j = 2;
+	marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("corner");
+		newBox.css("margin-top", "-125px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1, j+3, j+4];
+		var idStr = idArr.join("&");
+		idStr = "corner-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+
+
+	//CREATING split BETS---------------------------------------------------------------------
+    //FIRST ROW-----------------------------------------------------------------------------------
+	j = 1;
+	marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("split");
+		newBox.css("margin-top", "-275px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+3];
+		var idStr = idArr.join("&");
+		idStr = "split-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+    //SECOND ROW----------------------------------------------------------------------------------
+	j = 2;
+	marginLeft = 75;
+
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("split");
+		newBox.css("margin-top", "-175px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+3];
+		var idStr = idArr.join("&");
+		idStr = "split-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+    //THIRD ROW----------------------------------------------------------------------------------
+	j = 1;
+	marginLeft = 25;
+
+	for (var i=0; i<12; i++){
+		var newBox = $("<div>");
+		newBox.addClass("split");
+		newBox.css("margin-top", "-225px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1];
+		var idStr = idArr.join("&");
+		idStr = "split-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+
+	j = 3;
+	marginLeft = 75;
+    //FIFTH ROW-----------------------------------------------------------------------------------
+	for (var i=0; i<11; i++){
+		var newBox = $("<div>");
+		newBox.addClass("split");
+		newBox.css("margin-top", "-75px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+3];
+		var idStr = idArr.join("&");
+		idStr = "split-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+	//FOURTH ROW------------------------------------------------------------------------------------
+	j = 2;
+	marginLeft = 25;
+
+	for (var i=0; i<12; i++){
+		var newBox = $("<div>");
+		newBox.addClass("split");
+		newBox.css("margin-top", "-125px");
+		marginLeft+=(100);
+		newBox.css("margin-left", marginLeft + "px");
+		var idArr = [j, j+1];
+		var idStr = idArr.join("&");
+		idStr = "split-" + idStr;
+		newBox.attr("id", idStr);
+		$("#tablewrap").append(newBox);
+		j+=3;
+
+	}
+
+	$("#spinBtn").on("click",function(event) {
+	    event.preventDefault();
+
+	    var currentURL = window.location;
+
+	    var allChips = $(".chips");
+	    // console.log($(allChips[0]).attr("beton"));
+
+	    var bets = [];
+		for (var i = 0; i<allChips.length; i++) {
+
+			if ($(allChips[i]).attr("beton") && $(allChips[i]).attr("beton") !== "chipWrapInner" ) {
+
+				bets.push({
+					name:$(allChips[i]).attr("beton"),
+					amount:$(allChips[i]).attr("chipvalue"),
+					UserId:{{user.id}}
+				});
+			}
+		}
+
+		if (bets.length === 0) {
+			console.log("No bet was made");
+			return;
+		}
+
+		var userMoney = parseInt({{user.money}});
+		var moneySpent = 0;
+		for (var i = 0; i < bets.length; i++) {
+			moneySpent+=parseInt(bets[i].amount);
+		}
+
+		if (moneySpent > userMoney || moneySpent === 0) {
+			console.log("{{user.user_name}}, you don't have enough money");
+			return;
+		}
+
+		// console.log(userMoney);
+		// console.log(moneySpent);
+		// console.log(bets);
+
+		var postData = {data:JSON.stringify(bets)};
+
+	    // POSTs new user
+	    $.post(currentURL, postData, function(data) {
+	      // console.log(data);
+	      // window.location = currentURL
+	    });
+   	});
+
+</script>
