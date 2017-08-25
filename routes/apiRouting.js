@@ -74,7 +74,9 @@ module.exports = function(app){
 		// 	console.log(betsArr[i]);
 		// }
 
-		betsArr = resolveBets(betsArr);
+		var resolveObj = resolveBets(betsArr);
+		betsArr = resolveObj.betsMdl;
+		var numResult = resolveObj.results;
 		// console.log(betsArr);
 
 		db.Bet.bulkCreate(betsArr).then(function(){
@@ -88,7 +90,8 @@ module.exports = function(app){
 				// console.log(user);
 				user.increment("money",{by: net});
 			}).then(function() {
-				res.end();
+				// console.log(numResult);
+				res.end(); // change to res.send();
 			});
 		})
 	});

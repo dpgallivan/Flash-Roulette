@@ -141,7 +141,7 @@ function resolveBets(betsArr) {
 		betsArr[i] = new Bet(betsArr[i],spun);
 	}
 
-	return betsArr;
+	return {betsMdl:betsArr, results: spun};
 }
 
 module.exports = resolveBets;
