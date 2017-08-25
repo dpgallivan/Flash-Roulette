@@ -67,14 +67,33 @@ module.exports = function(app){
 	});
 
 	app.post('/roulette/:id', function(req, res){
-		console.log(JSON.parse(req.body.data));
+		// console.log(JSON.parse(req.body.data));
 		var betsArr = JSON.parse(req.body.data);
 
-		for(var i = 0; i < betsArr.length; i++) {
-			console.log(betsArr[i]);
-		}
+		// for(var i = 0; i < betsArr.length; i++) {
+		// 	console.log(betsArr[i]);
+		// }
 
-		// betsArr = resolveBets(betsArr);
+		var resolveObj = resolveBets(betsArr);
+		betsArr = resolveObj.betsMdl;
+		var numResult = resolveObj.results;
+		// console.log(betsArr);
+
+		db.Bet.bulkCreate(betsArr).then(function(){
+			var net = 0;
+			for (var i = 0; i<betsArr.length; i++) {
+				net+=betsArr[i].net;
+			}
+			// console.log(net);
+
+			db.User.findById(betsArr[0].UserId).then(function(user) {
+				// console.log(user);
+				user.increment("money",{by: net});
+			}).then(function() {
+				// console.log(numResult);
+				res.end(); // change to res.send();
+			});
+		})
 	});
 
 	app.put("/add_money/:id", function(req,res) {

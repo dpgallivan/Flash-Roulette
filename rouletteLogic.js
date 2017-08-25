@@ -58,14 +58,14 @@ function whichTwelve(num) {
 
 function whichRow(num) {
 	if (num%3 === 0) {
-		return "3";
+		return 3;
 	}
 
 	if (num%3 === 2) {
-		return "2";
+		return 2;
 	}
 
-	return "1";
+	return 1;
 }
 
 function whichHalf(num) {
