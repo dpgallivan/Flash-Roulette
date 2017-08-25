@@ -106,12 +106,16 @@
 
 <footer id="footer">
 
+	<div id="userInfo" class="chips"><span><strong>User: {{user.user_name}} Current: ${{user.money}}</strong></span></div>
 	<div class=buttons>
-	<div id="moneyDisplay">${{user.money}}</div>
+	<!-- <div id="userInfo">
+		<div id="userNameDisplay"><strong>User: {{user.user_name}}</strong></div>
+		<div id="moneyDisplay"><strong>Current: ${{user.money}}</strong></div>
+	</div> -->
 	<form action="/add_money/{{user.id}}?_method=PUT" method="POST">
 		<input type="text" name="addMoney" id="addMoney">
 		<input type="hidden" name="money" value="{{user.money}}">
-		<button id="addBtn">Add Moneys $$</button>
+		<button id="addBtn">$ Add Money $</button>
 	</form>
 
 		<button id="spinBtn">Spin!</button>
@@ -123,6 +127,10 @@
 		<div id = "chip5" class="chips"><span>5</span></div>
 		<div id = "chip10" class="chips"><span>10</span></div>
 		<div id = "chip25" class="chips"><span>25</span></div>
+		<div id = "chip50" class="chips"><span>50</span></div>
+		<div id = "chip75" class="chips"><span>75</span></div>
+		<div id = "chip100" class="chips"><span>100</span></div>
+		<div id = "chip200" class="chips"><span>200</span></div>
 	</div>
 
 	<div class="log"></div>
@@ -146,6 +154,10 @@ $("#chip1").attr("chipvalue", 1);
 $("#chip5").attr("chipvalue", 5);
 $("#chip10").attr("chipvalue", 10);
 $("#chip25").attr("chipvalue", 25);
+$("#chip50").attr("chipvalue", 50);
+$("#chip75").attr("chipvalue", 75);
+$("#chip100").attr("chipvalue", 100);
+$("#chip200").attr("chipvalue", 200);
 
 //DRAGGING FUNCTIONS---------------------------------------------------------------------------------------
   // $( function() {
