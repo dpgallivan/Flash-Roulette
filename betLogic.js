@@ -19,19 +19,19 @@ var Bet = function(betInput,numSpun) {
 	var allValues = [];
 	switch(this.type) {
 		case "straight_up":
-			payout = 36;
+			payout = 35;
 			break;
 
 		case "split":
-			payout = 18;
+			payout = 17;
 			break;
 
 		case "corner":
-			payout = 9;
+			payout = 8;
 			break;
 
 		case "row":
-			payout = 3;
+			payout = 2;
 			for(var i = 0; i < Roulette.values.length; i++) {
 				if(valuesArr[0] == Roulette.values[i].row) {
 					allValues.push(Roulette.values[i].value);
@@ -41,7 +41,7 @@ var Bet = function(betInput,numSpun) {
 			break;
 
 		case "twelve":
-			payout = 3;
+			payout = 2;
 			for(var i = 0; i < Roulette.values.length; i++) {
 				if(valuesArr[0] == Roulette.values[i].twelve) {
 					allValues.push(Roulette.values[i].value);
@@ -51,7 +51,7 @@ var Bet = function(betInput,numSpun) {
 			break;
 
 		case "half":
-			payout = 2;
+			payout = 1;
 			for(var i = 0; i < Roulette.values.length; i++) {
 				if(valuesArr[0] == Roulette.values[i].half) {
 					allValues.push(Roulette.values[i].value);
@@ -61,7 +61,7 @@ var Bet = function(betInput,numSpun) {
 			break;
 
 		case "EO":
-			payout = 2;
+			payout = 1;
 			for(var i = 0; i < Roulette.values.length; i++) {
 				if(valuesArr[0] == Roulette.values[i].EO) {
 					allValues.push(Roulette.values[i].value);
@@ -71,7 +71,7 @@ var Bet = function(betInput,numSpun) {
 			break;
 
 		case "color":
-			payout = 2;
+			payout = 1;
 			for(var i = 0; i < Roulette.values.length; i++) {
 				if(valuesArr[0] == Roulette.values[i].color) {
 					allValues.push(Roulette.values[i].value);

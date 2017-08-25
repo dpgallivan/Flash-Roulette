@@ -106,7 +106,7 @@
 
 <footer id="footer">
 
-	<div id="userInfo" class="chips"><span><strong>User: {{user.user_name}} Current: ${{user.money}}</strong></span></div>
+	<div id="userInfo" class="chips"><span><strong>User: {{user.user_name}} - ${{user.money}}</strong></span></div>
 	<div class=buttons>
 	<!-- <div id="userInfo">
 		<div id="userNameDisplay"><strong>User: {{user.user_name}}</strong></div>
@@ -137,17 +137,16 @@
 	<div class="textDisplay"></div>
 </footer>
 
-<script type="text/javascript">
+<script type="text/javascript"> 
+
+var currentURL = window.location;
 
 //--------------------------------------------------------------------------------------------------------
-// var money = 0;
 
-// $("#moneyDisplay").html("$" + money);
-
-$("#addBtn").click(function(event){
-	money += $("#addMoney").val().trim();
-	$("#moneyDisplay").html("$" + money);
-});
+// $("#addBtn").click(function(event){
+// 	money += $("#addMoney").val().trim();
+// 	$("#moneyDisplay").html("$" + money);
+// });
 
 //ATTRIBUTING VALUES TO CHIPS-----------------------------------------------------------------------------
 $("#chip1").attr("chipvalue", 1);
@@ -324,8 +323,6 @@ $("#chip200").attr("chipvalue", 200);
 	$("#spinBtn").on("click",function(event) {
 	    event.preventDefault();
 
-	    var currentURL = window.location;
-
 	    var allChips = $(".chips");
 	    // console.log($(allChips[0]).attr("beton"));
 
@@ -367,7 +364,7 @@ $("#chip200").attr("chipvalue", 200);
 	    // POSTs new user
 	    $.post(currentURL, postData, function(data) {
 	      // console.log(data);
-	      window.location = currentURL
+	      window.location = currentURL;
 	    });
    	});
 
