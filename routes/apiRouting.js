@@ -23,7 +23,7 @@ module.exports = function(app){
 
 		db.User.create(req.body).then(function(data) {
 			// console.log(data.dataValues.id);
-			res.send({userId:data.dataValues.id});
+			res.send({userId:data.id});
 		});
 	});
 
