@@ -1,5 +1,6 @@
 var db = require('../models');
 var resolveBets = require("../betLogic.js");
+//var loggingIN = require("../login.js")
 
 module.exports = function(app){
 
@@ -122,4 +123,16 @@ module.exports = function(app){
 			res.redirect("/roulette/" + req.params.id);
 		});
 	});
+
+	app.post('/api/login', function(req, res){
+		// db.findOne()
+		console.log(req.body);
+		// search for attributes
+		db.User.findOne({ where: {user_name: req.body.userLogin, password:req.body.userPassword}}).then(function(data) {
+			
+		console.log(data);
+
+		res.send({userId:data.id});
+		})
+	})
 };
