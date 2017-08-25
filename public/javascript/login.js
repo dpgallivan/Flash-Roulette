@@ -55,3 +55,30 @@ $("#login-modal-background").click(function(){
     });
 
   });
+
+$("#loginBtn").click(function(event){
+
+  var userLogin = $("#userLogIn").val().trim();
+  var userPassword = $("#passwordLogIn").val().trim();
+  console.log(userLogin);
+  console.log(userPassword);
+
+  //CREATES LOGIN PAIR
+  var loginPair = {
+    "userLogin": userLogin,
+    "userPassword": userPassword
+  };
+    console.log(loginPair)
+  // Clears fields
+    $("#loginBtn").toggleClass("is-active");
+    $("#userLogIn").val("");
+    $("#passwordLogIn").val("");
+
+    // GET loginPair from 
+    $.post(currentURL + "/api/login", loginPair, function(data) {
+      // console.log(data);
+      // login(data.userId);
+      window.location = currentURL + "/roulette/" + data.userId;
+    });
+
+});
