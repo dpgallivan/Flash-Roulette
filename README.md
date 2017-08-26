@@ -13,3 +13,5 @@ Payouts are assigned to each type of bet as well.
 When the user is ready, they will press spin for the server to take in their bets and run the roulette. The bets are stored in another table on the same database. Depending on the results, the user's money will update on the database and on the page. It will also prepend bet information under the user dashboard.
 
 The show statistics button will route to a page that will show how often a number has been spun between all users. In the future, I would like to add different searches for data like how often a color has been spun, stats for just the user specifically, etc.
+
+I also wanted to include a multiplayer aspect to the game. For example, there will be a roulette that spins a set increment of time and various users can bet on this one roulette. When the time has come, results will be calculated and the bets of all users will be displayed.
