@@ -107,14 +107,14 @@ module.exports = function(app){
 		// console.log(req.body);
 		db.User.findOne({ where: {user_name: req.body.userLogin, password:req.body.userPassword}}).then(function(data) {
 
-		if(!data) {
-			// console.log(data);
-			res.end();
-		}
+			if(!data) {
+				// console.log(data);
+				res.end();
+			}
 
-		else {
-			res.send({userId:data.id});
-		}
-		})
-	})
+			else {
+				res.send({userId:data.id});
+			}
+		});
+	});
 };
