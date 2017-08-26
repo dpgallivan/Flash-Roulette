@@ -56,7 +56,7 @@ $("#login-modal-background").click(function(){
 
   });
 
-$("#loginBtn").click(function(event){
+$("#loginUser").click(function(event){
 
   var userLogin = $("#userLogIn").val().trim();
   var userPassword = $("#passwordLogIn").val().trim();
@@ -70,7 +70,7 @@ $("#loginBtn").click(function(event){
   };
     console.log(loginPair)
   // Clears fields
-    $("#loginBtn").toggleClass("is-active");
+    $("#logButton").toggleClass("is-active");
     $("#userLogIn").val("");
     $("#passwordLogIn").val("");
 
