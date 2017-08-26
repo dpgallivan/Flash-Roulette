@@ -135,10 +135,11 @@ var Bet = function(betInput,numSpun) {
 
 function resolveBets(betsArr) {
 	var spun = Roulette.spin();
+	var numSpun = spun.value;
 	// console.log(spun);
 
 	for (var i = 0; i<betsArr.length; i++) {
-		betsArr[i] = new Bet(betsArr[i],spun);
+		betsArr[i] = new Bet(betsArr[i],numSpun);
 	}
 
 	return {betsMdl:betsArr, results: spun};

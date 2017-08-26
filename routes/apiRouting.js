@@ -18,6 +18,42 @@ module.exports = function(app){
 		});
 	});
 
+	app.get("/roulette_statistics", function(req,res) {
+		db.Roulette_Spin.findAll({}).then(function(data) {
+			// console.log(data);
+
+			// var dataCopy = data;
+
+			// var spinObjArr = [];
+
+			// for(var i = 0; i < dataCopy.length; i++) {
+			// 	var spinVal = dataCopy[i].value;
+			// 	var valCount = 1;
+			// 	for (var j = i+1; j < dataCopy.length; j++) {
+			// 		if(spinVal === dataCopy[j].value ) {
+			// 			valCount++;
+			// 			dataCopy.splice(j,1);
+			// 			j--;
+			// 		}
+			// 	}
+
+			// 	spinObjArr.push({label:spinVal,value:valCount});
+			// }
+
+			// console.log(spinObjArr);
+
+			// var handleBarObj = {
+			// 	spin: spinObjArr
+			// }; 
+
+			var handleBarObj = {
+				SpinResults: data
+			};
+
+			res.render("stats",handleBarObj);
+		});
+	});
+
 	app.post('/api/signup', function(req, res){
 		// console.log(req.body);
 
@@ -37,7 +73,7 @@ module.exports = function(app){
 
 		var resolveObj = resolveBets(betsArr);
 		betsArr = resolveObj.betsMdl;
-		var numResult = resolveObj.results;
+		var spinResult = resolveObj.results;
 		// console.log(betsArr);
 
 		db.Bet.bulkCreate(betsArr).then(function(){
@@ -51,8 +87,11 @@ module.exports = function(app){
 				// console.log(user);
 				user.increment("money",{by: net});
 			}).then(function() {
-				// console.log(numResult);
-				res.end(); // change to res.send();
+				console.log(spinResult);
+
+				db.Roulette_Spin.create({value:spinResult.value,color:spinResult.color}).then(function() {
+					res.end();
+				});
 			});
 		})
 	});

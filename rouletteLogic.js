@@ -30,7 +30,7 @@ const Roulette = {
 	spin: function() {
 		var rand = Math.floor(Math.random()*(this.values.length));
 		// console.log(spinner[rand]);
-		return spinner[rand].value;
+		return spinner[rand];
 	}
 };
 

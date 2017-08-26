@@ -119,6 +119,11 @@
 	</form>
 
 		<button id="spinBtn">Spin!</button>
+
+	<form action="/roulette_statistics" method="GET">
+		<button id="statsBtn">Some Statistics</button>
+	</form>
+
 	</div>
 
 
@@ -371,7 +376,7 @@ $("#chip200").attr("chipvalue", 200);
 	    });
    	});
 
-   	$("#userInfo").html("<span><strong>User: {{user.user_name}} - ${{user.money}}</strong></span>");
+   	$("#userInfo").html("<span><strong>User: {{user.user_name}} <-> ${{user.money}}</strong></span>");
 
    	{{#each user.Bets}}
 		$("#betHistory").prepend($("<li>").text("Bet type: {{this.type}}, Bet on {{this.values}}, net($): {{this.net}}"));
