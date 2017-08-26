@@ -44,14 +44,27 @@ $("#loginUserError").hide();
     };
 
     // Clears fields
-    $("#creaButton").toggleClass("is-active");
-    $("#createUserName").val("");
-    $("#createUserPassword").val("");
+    // $("#creaButton").toggleClass("is-active");
+    // $("#createUserName").val("");
+    // $("#createUserPassword").val("");
 
     // POSTs new user
     $.post(currentURL + "/api/signup", newUser, function(data) {
       // console.log(data);
       // login(data.userId);
+
+      if(!data) {
+        $("#createUserError").html("*Username is taken*");
+        $("#createUserError").show();
+        $("#createUserName").val("");
+        $("#createUserPassword").val("");
+        return;
+      }
+
+      $("#createUserError").hide();
+      $("#createUserName").val("");
+      $("#createUserPassword").val("");
+
       window.location = currentURL + "/roulette/" + data.userId;
     });
 

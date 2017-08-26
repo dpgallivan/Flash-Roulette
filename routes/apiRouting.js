@@ -37,9 +37,23 @@ module.exports = function(app){
 	app.post('/api/signup', function(req, res){
 		// console.log(req.body);
 
-		db.User.create(req.body).then(function(data) {
-			// console.log(data.dataValues.id);
-			res.send({userId:data.id});
+		db.User.findOne({
+			where:{
+				user_name:req.body.user_name
+			}
+		}).then(function(data){
+			// console.log(data);
+
+			if(data) {
+				res.end();
+			}
+
+			else {
+				db.User.create(req.body).then(function(data) {
+					// console.log(data.dataValues.id);
+					res.send({userId:data.id});
+				});
+			}
 		});
 	});
 
