@@ -16,10 +16,12 @@ module.exports = function(app){
 				res.redirect("/");
 			}
 
-			var handleBarObj = {
-				user: data
-			};
-			res.render("roulette",handleBarObj);
+			else {
+				var handleBarObj = {
+					user: data
+				};
+				res.render("roulette",handleBarObj);
+			}
 		});
 	});
 
@@ -46,6 +48,7 @@ module.exports = function(app){
 
 			if(data) {
 				res.end();
+				return;
 			}
 
 			else {
@@ -124,6 +127,7 @@ module.exports = function(app){
 			if(!data) {
 				// console.log(data);
 				res.end();
+				return;
 			}
 
 			else {
