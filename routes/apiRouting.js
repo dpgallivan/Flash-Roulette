@@ -11,6 +11,11 @@ module.exports = function(app){
 			include: [db.Bet]
 		}).then(function(data) {
 			// console.log(data);
+
+			if(!data) {
+				res.redirect("/");
+			}
+
 			var handleBarObj = {
 				user: data
 			};
@@ -130,6 +135,10 @@ module.exports = function(app){
 		db.User.findOne({ where: {user_name: req.body.userLogin, password:req.body.userPassword}}).then(function(data) {
 			
 		console.log(data);
+
+		if(!data) {
+			res.send({userId:null});
+		}
 
 		res.send({userId:data.id});
 		})

@@ -14,7 +14,8 @@ $("#login-modal-background").click(function(){
    $("#logButton").toggleClass("is-active"); 
 })
 
-  
+$("#createUserError").hide();
+$("#loginUserError").hide();
 
   var currentURL = window.location.origin;
 
@@ -70,14 +71,24 @@ $("#loginUser").click(function(event){
   };
     console.log(loginPair)
   // Clears fields
-    $("#logButton").toggleClass("is-active");
-    $("#userLogIn").val("");
-    $("#passwordLogIn").val("");
 
     // GET loginPair from 
     $.post(currentURL + "/api/login", loginPair, function(data) {
       // console.log(data);
       // login(data.userId);
+
+      if(!data.userId) {
+        $("#loginUserError").html("*There is no user that matched these inputs*");
+        $("#loginUserError").show();
+        $("#passwordLogIn").val("");
+        return;
+      }
+
+      $("#loginUserError").hide();
+      $("#logButton").toggleClass("is-active");
+      $("#userLogIn").val("");
+      $("#passwordLogIn").val("");
+
       window.location = currentURL + "/roulette/" + data.userId;
     });
 
