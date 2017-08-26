@@ -25,31 +25,6 @@ module.exports = function(app){
 
 	app.get("/roulette_statistics", function(req,res) {
 		db.Roulette_Spin.findAll({}).then(function(data) {
-			// console.log(data);
-
-			// var dataCopy = data;
-
-			// var spinObjArr = [];
-
-			// for(var i = 0; i < dataCopy.length; i++) {
-			// 	var spinVal = dataCopy[i].value;
-			// 	var valCount = 1;
-			// 	for (var j = i+1; j < dataCopy.length; j++) {
-			// 		if(spinVal === dataCopy[j].value ) {
-			// 			valCount++;
-			// 			dataCopy.splice(j,1);
-			// 			j--;
-			// 		}
-			// 	}
-
-			// 	spinObjArr.push({label:spinVal,value:valCount});
-			// }
-
-			// console.log(spinObjArr);
-
-			// var handleBarObj = {
-			// 	spin: spinObjArr
-			// }; 
 
 			var handleBarObj = {
 				SpinResults: data
@@ -129,18 +104,17 @@ module.exports = function(app){
 	});
 
 	app.post('/api/login', function(req, res){
-		// db.findOne()
-		console.log(req.body);
-		// search for attributes
+		// console.log(req.body);
 		db.User.findOne({ where: {user_name: req.body.userLogin, password:req.body.userPassword}}).then(function(data) {
-			
-		console.log(data);
 
 		if(!data) {
-			res.send({userId:null});
+			// console.log(data);
+			res.end();
 		}
 
-		res.send({userId:data.id});
+		else {
+			res.send({userId:data.id});
+		}
 		})
 	})
 };

@@ -61,23 +61,22 @@ $("#loginUser").click(function(event){
 
   var userLogin = $("#userLogIn").val().trim();
   var userPassword = $("#passwordLogIn").val().trim();
-  console.log(userLogin);
-  console.log(userPassword);
+  // console.log(userLogin);
+  // console.log(userPassword);
 
   //CREATES LOGIN PAIR
   var loginPair = {
     "userLogin": userLogin,
     "userPassword": userPassword
   };
-    console.log(loginPair)
+    // console.log(loginPair)
   // Clears fields
 
     // GET loginPair from 
     $.post(currentURL + "/api/login", loginPair, function(data) {
       // console.log(data);
-      // login(data.userId);
 
-      if(!data.userId) {
+      if(!data) {
         $("#loginUserError").html("*There is no user that matched these inputs*");
         $("#loginUserError").show();
         $("#passwordLogIn").val("");
